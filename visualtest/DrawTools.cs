@@ -11,6 +11,37 @@ namespace visualtest
 {
     public class DrawTools
     {
+
+
+        public void shellSort()
+        {
+            int kich_co_mang = buttonArray.Length;
+            int i, j, inc;
+            int temp;
+            inc = 3;
+            while (inc > 0)
+            {
+                for (i = 0; i < kich_co_mang; i++)
+                {
+                    j = i;
+                    temp = int.Parse(buttonArray[i].Text);
+                    while ((j >= inc) && (int.Parse(buttonArray[j - inc].Text) > temp))
+                    {
+
+                        SetValueOfElement(j, buttonArray[j - inc].Text);
+                        j = j - inc;
+                    }
+                    SetValueOfElement(j, temp.ToString());
+                }
+                if (inc / 2 != 0)
+                    inc = inc / 2;
+                else if (inc == 1)
+                    inc = 0;
+                else
+                    inc = 1;
+            }
+        }
+
         public void Selection(int deley)
         {
             int n = buttonArray.Length;
