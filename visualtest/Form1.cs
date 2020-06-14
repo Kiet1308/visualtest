@@ -22,7 +22,7 @@ namespace visualtest
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
-            Tools = new DrawTools(this);
+            Tools = new DrawTools(this.panel1);
             Console.WriteLine();
            
             
@@ -52,7 +52,7 @@ namespace visualtest
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Thread thread = new Thread(() => { Tools.BubbleSort(); MessageBox.Show("Done"); });
+            Thread thread = new Thread(() => { Tools.BubbleSort(int.Parse(DeleyTime.Text)); MessageBox.Show("Done"); });
             thread.Start();
             
 
@@ -60,7 +60,7 @@ namespace visualtest
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Thread thread = new Thread(() => { Tools.QuickSort(0,Tools.ButtonArray.Length-1); MessageBox.Show("Done"); });
+            Thread thread = new Thread(() => { Tools.QuickSort(0,Tools.ButtonArray.Length-1, int.Parse(DeleyTime.Text)); MessageBox.Show("Done"); });
             thread.Start();
         }
 
@@ -68,15 +68,12 @@ namespace visualtest
         {
 
 
-            //this.panel1.Controls.Clear();
+            this.panel1.Controls.Clear();
             //Thread.Sleep(1);
-            foreach (var item in this.Controls)
-            {
-                
-            }
+           
                 Tools.Perform(int.Parse(num.Text));
                 arr = Tools.ButtonArray;
-                Tools.Draw();
+            Tools.Draw();
             
             
         }
@@ -86,6 +83,35 @@ namespace visualtest
             Thread thread = new Thread(() => { Tools.Reverse(); MessageBox.Show("Done"); });
             thread.Start();
             //Tools.Reverse();
+        }
+
+        private void Form1_SizeChanged(object sender, EventArgs e)
+        {
+            this.panel1.Size = new Size(this.Width,this.Height-this.pnl.Height);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(() => { Tools.CoctaiSort(int.Parse(DeleyTime.Text)); MessageBox.Show("Done"); });
+            thread.Start();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(() => { Tools.InsertionSort(int.Parse(DeleyTime.Text)); MessageBox.Show("Done"); });
+            thread.Start();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(() => { Tools.heapSort(arr.Length); MessageBox.Show("Done"); });
+            thread.Start();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(() => { Tools.Selection(int.Parse(DeleyTime.Text)); MessageBox.Show("Done"); });
+            thread.Start();
         }
     }
 }
