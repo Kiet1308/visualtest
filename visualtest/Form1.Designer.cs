@@ -40,11 +40,13 @@
             this.DeleyTime = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.pnl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,6 +151,8 @@
             // 
             // pnl
             // 
+            this.pnl.Controls.Add(this.button12);
+            this.pnl.Controls.Add(this.button11);
             this.pnl.Controls.Add(this.button10);
             this.pnl.Controls.Add(this.button9);
             this.pnl.Controls.Add(this.button8);
@@ -166,41 +170,19 @@
             this.pnl.Controls.Add(this.button3);
             this.pnl.Location = new System.Drawing.Point(15, 12);
             this.pnl.Name = "pnl";
-            this.pnl.Size = new System.Drawing.Size(498, 96);
+            this.pnl.Size = new System.Drawing.Size(655, 96);
             this.pnl.TabIndex = 11;
             // 
-            // button6
+            // button10
             // 
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button6.Location = new System.Drawing.Point(107, 64);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Cocktail Sort";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button7.Location = new System.Drawing.Point(188, 64);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "Insertion Sort";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button8
-            // 
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button8.Location = new System.Drawing.Point(269, 64);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "Heap Sort";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button10.Location = new System.Drawing.Point(426, 64);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(72, 23);
+            this.button10.TabIndex = 14;
+            this.button10.Text = "Shell";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
@@ -213,16 +195,60 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button10
+            // button8
             // 
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button10.Location = new System.Drawing.Point(426, 64);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(72, 23);
-            this.button10.TabIndex = 14;
-            this.button10.Text = "Shell";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button8.Location = new System.Drawing.Point(269, 64);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 12;
+            this.button8.Text = "Heap Sort";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button7.Location = new System.Drawing.Point(188, 64);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "Insertion Sort";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button6.Location = new System.Drawing.Point(107, 64);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "Cocktail Sort";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button11
+            // 
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button11.Location = new System.Drawing.Point(426, 38);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(72, 23);
+            this.button11.TabIndex = 15;
+            this.button11.Text = "My  Sort";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.Button11_Click);
+            // 
+            // button12
+            // 
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button12.Location = new System.Drawing.Point(504, 64);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(81, 23);
+            this.button12.TabIndex = 16;
+            this.button12.Text = "Double Select";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.Button12_Click);
             // 
             // Form1
             // 
@@ -261,6 +287,8 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
     }
 }
 

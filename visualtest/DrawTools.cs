@@ -12,7 +12,60 @@ namespace visualtest
     public class DrawTools
     {
 
+        public void DoubleSelect(int deley)
+        {
+            int n = buttonArray.Length;
+            for (int i = 0, j = n - 1;
+                     i < j; i++, j--)
+            {
+                int min = int.Parse(buttonArray[i].Text), max = int.Parse(buttonArray[i].Text);
+                int min_i = i, max_i = i;
+                for (int k = i; k <= j; k++)
+                {
+                    if (int.Parse(buttonArray[k].Text) > max)
+                    {
+                        max = int.Parse(buttonArray[k].Text);
+                        max_i = k;
+                    }
 
+                    else if (int.Parse(buttonArray[k].Text) < min)
+                    {
+                        min = int.Parse(buttonArray[k].Text);
+                        min_i = k;
+                    }
+                }
+
+                // shifting the min. 
+                SwapTwoElement(i, min_i);
+
+                // Shifting the max. The equal condition 
+                // happens if we shifted the max to arr[min_i]  
+                // in the previous swap. 
+                if (int.Parse(buttonArray[min_i].Text) == max)
+                    SwapTwoElement(j, min_i);
+                else
+                SwapTwoElement( j, max_i);
+                Thread.Sleep(deley);
+            }
+        }
+
+        public void MySort(int deley)
+        {
+            int n = buttonArray.Length;
+            for (int i = 0; i < n-1; i++)
+            {
+                for (int j = i; j < n; j++)
+                {
+                    if (int.Parse(buttonArray[j].Text) < int.Parse(buttonArray[i].Text))
+                    {
+                        
+                        SwapTwoElement(i, j);
+                        Thread.Sleep(deley);
+                    }
+                }
+            }
+
+        }
         public void shellSort()
         {
             int kich_co_mang = buttonArray.Length;
@@ -53,17 +106,19 @@ namespace visualtest
                 int min_idx = i;
                 for (int j = i + 1; j < n; j++)
                 {
-                    //buttonArray[j].BackColor = Color.Red;
+                    buttonArray[j].BackColor = Color.Red;
                     if (int.Parse(buttonArray[j].Text) < int.Parse(buttonArray[min_idx].Text))
                     {
                         
                         buttonArray[min_idx].BackColor = Color.White;
                         min_idx = j;
-                        Thread.Sleep(deley);
+                        
                     }
-                   // buttonArray[j].BackColor = Color.White;
+                   
 
-                    buttonArray[min_idx].BackColor = Color.Yellow;
+                    buttonArray[min_idx].BackColor = Color.Purple;
+                    Thread.Sleep(deley);
+                    buttonArray[j].BackColor = Color.White;
                 }
 
 

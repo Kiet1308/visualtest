@@ -119,5 +119,17 @@ namespace visualtest
             Thread thread = new Thread(() => { Tools.shellSort(); MessageBox.Show("Done"); });
             thread.Start();
         }
+
+        private void Button11_Click(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(() => { Tools.MySort(int.Parse(DeleyTime.Text)); MessageBox.Show("Done"); });
+            thread.Start();
+        }
+
+        private void Button12_Click(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(() => { Tools.DoubleSelect(int.Parse(DeleyTime.Text)); MessageBox.Show("Done"); });
+            thread.Start();
+        }
     }
 }
